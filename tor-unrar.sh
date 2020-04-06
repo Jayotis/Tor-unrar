@@ -8,8 +8,9 @@ then
     #wait 3 days for applications to find and copy
     if (( (now - made) > (259200) ))
     then
-        #delete any other extracted files and leave onlu these types ToDo:exception handling
-        find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' ! -name '*.mkv' -type f,d -delete
+        if ( find . -name '*.r*' )
+            #archive found, delete extracted files. ToDo:watch for broken torrents, code for any scene file changes.
+            find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' ! -type f,d -delete
         rm got_it
         touch skip_it
         #mark this directory as processed
