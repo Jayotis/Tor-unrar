@@ -8,7 +8,8 @@ Description=tor-unrar.service file (unrars torrents for pickup)
 
 [Service]
 Type=oneshot
-User=you
+User=root
+#required for immutable bit usage
 ExecStart=/usr/bin/find /home/you/torrents -name "*.rar" -execdir /home/you/tor-unrar.sh "{}" \;
 ```
 On a timer:
