@@ -14,7 +14,9 @@ then
             fi
             chattr -R +i Sample
         fi
-        #delete extracted files.  ToDo: watch for broken torrents and adapt for scene convention changes.
+        #delete extracted files only, hopefully leaving only the original files.
+        #
+        #ToDo: watch for broken torrents and adapt for scene convention changes here.
         find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' -delete
         if [ -d Sample ]; then
             if [ -d Subs ]; then
