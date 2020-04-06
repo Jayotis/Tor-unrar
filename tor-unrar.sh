@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ -f skip_it ]; then 
+if [ -f .skip_it ]; then 
     exit
-elif [ -f got_it ]
+elif [ -f .got_it ]
 then
     made=$(stat -c %Y got_it)
     now=$(date +"%s")
@@ -24,7 +24,7 @@ then
             fi
             chattr -R -i Sample
         fi
-        touch skip_it
+        touch .skip_it
         #mark this directory as processed
     fi
     exit
@@ -34,6 +34,6 @@ else
     unrar x -o- *.rar tmp
     mv tmp/* ./
     rm -d tmp
-    touch got_it
+    touch .got_it
 #mark directory has having a file ready for copy
 fi
