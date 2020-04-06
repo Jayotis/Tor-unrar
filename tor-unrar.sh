@@ -8,8 +8,8 @@ then
     #wait 3 days for applications to find and copy
     if (( (now - made) > (259200) ))
     then
-        find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' ! -type f,d -delete
-        rm got_it
+        #delete extracted files.  ToDo: watch for broken torrents and code scene convention changes.
+        find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' -delete
         touch skip_it
         #mark this directory as processed
     fi
