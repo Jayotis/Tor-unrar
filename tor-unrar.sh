@@ -8,10 +8,7 @@ then
     #wait 3 days for applications to find and copy
     if (( (now - made) > (259200) ))
     then
-        if [ -n "$( find . -name '*.r*')" ]; then
-            #archive found, delete extracted files. ToDo:watch for broken torrents, code for any scene file changes.
-            find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' ! -type f,d -delete
-        fi
+        find . ! -name '*.r*' ! -name '*.sfv' ! -name '*.nfo' ! -type f,d -delete
         rm got_it
         touch skip_it
         #mark this directory as processed
